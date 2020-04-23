@@ -16,6 +16,7 @@ function preload() {
     getBackgroundImg();
     img1 = loadImage("sprites/IMG20190915094046.png");
     img2 = loadImage("sprites/Neal Santhosh with Chef Sanjeev Kapoor.png");
+    back_ground = loadImage("sprites/bg.png");
 }
 
 function setup(){
@@ -49,13 +50,16 @@ function setup(){
 }
 
 function draw(){
-    if(backgroundImg)
+    if(backgroundImg){
         background(backgroundImg);
+    }else{
+        background(back_ground);
+    }
     
-        noStroke();
-        textSize(35)
-        fill("white")
-        text("Score  " + score, width-300, 50)
+    noStroke();
+    textSize(35)
+    fill("white")
+    text("Score  " + score, width-300, 50)
     
     Engine.update(engine);
     //strokeWeight(4);
